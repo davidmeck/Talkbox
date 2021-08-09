@@ -83,7 +83,6 @@ ol {
   }
 
   button {
-
     padding: 0;
     background: none;
     border: none;
@@ -96,13 +95,12 @@ ol {
     display: flex;
     align-items: center;
     justify-content: center;
-		transition: background 0.2s ease-in-out;
-		
+    transition: background 0.2s ease-in-out;
 
     &.recording {
-			@include pulsate(pulse_red, $error);
+      @include pulsate(pulse_red, $error);
       animation: pulse_red 1.5s normal infinite ease-in-out;
-			animation-delay: 200ms;
+      animation-delay: 200ms;
       background: $error;
     }
   }
@@ -160,54 +158,32 @@ ol {
   }
 }
 
-@include pulsate(pulse_primary, $primary, 100px);
-
-.slide-exit {
+.slide-exit,
+.slide-enter {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   opacity: 0;
-  // transform: translateX(0);
-}
-
-.slide-enter {
-  transform: translateX(0);
 }
 
 .slide-enter-done {
-  opacity: 1;
-  transition: all 200ms ease-in-out;
+  transition: all 200ms ease;
 }
-.slide-exit,
 .slide-exit-done {
-  // opacity: 0;
-  transition: all 100ms ease-in-out;
-  transition-delay: 200ms;
-  &.left {
-    transform: translateX(-100vw);
-  }
-  &.right {
-    transform: translateX(100vw);
-  }
+  transition: all 100ms ease;
+  transition-delay: 100ms;
+  transform: translateX(0%);
 }
 .slide-enter-active {
   &.right {
-    transform: translateX(100vw);
+    transform: translateX(100%);
   }
   &.left {
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
   }
 }
-
-/* .slide-exit,
-.slide-exit-done {
-  .bottom-bar {
-    transition: all 200ms ease-in-out;
-    top: 100vw !important;
-  }
-}
- */
 
 .slide-exit,
 .slide-exit-done {
@@ -223,6 +199,8 @@ ol {
     top: 100vh;
     animation: show 200ms normal forwards ease-in-out;
     animation-delay: 50ms;
+    @include pulsate(pulse_primary, $primary, 100px);
+
     .mic-btn:not(.recording) {
       animation: pulse_primary 1.2s 1 forwards ease-in-out;
       animation-delay: 600ms;

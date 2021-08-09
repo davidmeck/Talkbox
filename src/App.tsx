@@ -32,7 +32,7 @@ const AppWrapper = () => {
   );
   return (
     <TransitionGroup>
-      <CSSTransition timeout={150} classNames="slide" key={location.key}>
+      <CSSTransition timeout={100} classNames="slide" key={location.key}>
         <div className={`app-wrapper ${direction}`}>
           <Switch location={location}>
             <Route path="/chat/:id" exact>
