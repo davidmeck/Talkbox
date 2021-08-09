@@ -40,5 +40,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Included Assets
 
-- [a relative link](app-layout.xd)App Layout XD file
-- [a relative link](public/starter.json)starter.json (Starter data with sample users and chats)
+- [a App Layout XD file](app-layout.xd)
+- [a starter.json (Starter data with sample users and chats)](public/starter.json)
