@@ -6,6 +6,11 @@ ul.chat-list {
     margin-bottom: 1rem;
     border-bottom: 1px rgba(black, 0.1) solid;
     border-radius: $radius;
+		&:last-child {
+			margin-bottom: 0;
+			padding-bottom: 0;
+			border-bottom: none;
+		}
     a {
       display: flex;
       padding-bottom: 1rem;
