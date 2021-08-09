@@ -1,6 +1,6 @@
 import { differenceInMinutes, format, isSameDay } from "date-fns";
 
-export const getMinutesAgo = (date: string) => {
+export const getTimeAgo = (date: string) => {
   let d = new Date(date);
   let mins = differenceInMinutes(new Date(), d);
 

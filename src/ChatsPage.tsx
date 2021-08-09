@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { ChatListItem, useChats } from "./store";
 import Cookie from "universal-cookie";
 import { Icon } from "./components";
-import { getMinutesAgo } from "./utils";
+import { getTimeAgo } from "./utils";
 
 const speechsdk = require("microsoft-cognitiveservices-speech-sdk");
 
@@ -141,7 +141,7 @@ const ChatPage = () => {
             <li className={c.own ? "own" : ""} key={index}>
               {c.content}
 
-              <span className="date">{getMinutesAgo(c.date)}</span>
+              <span className="date">{getTimeAgo(c.date)}</span>
             </li>
           ))}
         </ul>

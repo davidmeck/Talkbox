@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import ChatContext, { ChatListItem } from "../../store";
-import { getMinutesAgo } from "../../utils";
+import { getTimeAgo } from "../../utils";
 import "./style.scss";
 const Chat = ({ index, chats }: { index: number; chats: ChatListItem }) => {
   const unread = chats ? chats.chats.filter((c) => !c.read).length : 0;
@@ -24,7 +24,7 @@ const Chat = ({ index, chats }: { index: number; chats: ChatListItem }) => {
         </span>
 
         <span className="meta">
-          <span className="time">{getMinutesAgo(chats.chats[0].date)}</span>
+          <span className="time">{getTimeAgo(chats.chats[0].date)}</span>
           {unread > 0 && <span className="unread-count">{unread}</span>}
         </span>
       </Link>
