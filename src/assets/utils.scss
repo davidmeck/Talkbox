@@ -1,9 +1,28 @@
 $primary: #3e7fe0;
-$lightPrimary: #F1F7FE;
+$lightPrimary: #f1f7fe;
 $active: #59ad52;
-$warning: #EFC465;
+$warning: #efc465;
 $darkGray: #535353;
 $error: #ec3724;
 
 $radius: 10px;
 $largeRadius: 25px;
+
+@mixin pulsate($name, $color) {
+  @keyframes #{$name} {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba($color, 0.7);
+    }
+
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 20px rgba($color, 0);
+    }
+
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba($color, 0);
+    }
+  }
+}
