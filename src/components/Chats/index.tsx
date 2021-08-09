@@ -20,13 +20,16 @@ const Chat = ({ index, chats }: { index: number; chats: ChatListItem }) => {
         </span>
         <span className="content">
           <span className="name">{chats.name}</span>
-          <span className="message">{chats.chats[0].content}</span>
+          {!!chats.chats.length && (
+            <span className="message">{chats.chats[0].content}</span>
+          )}
         </span>
-
-        <span className="meta">
-          <span className="time">{getTimeAgo(chats.chats[0].date)}</span>
-          {unread > 0 && <span className="unread-count">{unread}</span>}
-        </span>
+        {!!chats.chats.length && (
+          <span className="meta">
+            <span className="time">{getTimeAgo(chats.chats[0].date)}</span>
+            {unread > 0 && <span className="unread-count">{unread}</span>}
+          </span>
+        )}
       </Link>
     </li>
   );

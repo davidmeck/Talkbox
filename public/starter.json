@@ -29,5 +29,31 @@
         "date": "Mon, 09 Aug 2021 8:23:22 GMT"
       }
     ]
+  },
+  {
+    "name": "Test User",
+    "image_id": 39,
+    "status": "active",
+    "chats": []
+  },
+
+  {
+    "name": "Jabin Jehoiachin",
+    "image_id": 9,
+    "status": "active",
+    "chats": []
+  },
+  {
+    "name": "Phil Fodre",
+    "image_id": 10,
+    "status": "active",
+    "chats": []
+  },
+  {
+    "name": "Chisom",
+    "image_id": 40,
+    "status": "active",
+    "chats": []
   }
+
 ]

@@ -53,7 +53,6 @@ const ChatPage = () => {
   const [displayText, displayTextSet] = useState<string | null>(null);
 
   const messagesEndRef = useRef<HTMLInputElement | null>(null);
-	const listRef = useRef();
 
   const listen = () => {
     //check status check
@@ -121,9 +120,13 @@ const ChatPage = () => {
         tokenSet(tkn);
       }
     });
-		dispatch({ type: "open", id: Number(id) - 1 });
-
+		
   }, []);
+
+	useEffect(() => {
+		dispatch({ type: "open", id: Number(id) - 1 });
+	}, [dispatch, id]);
+
 
   const firstUpdate = useRef(true);
 
