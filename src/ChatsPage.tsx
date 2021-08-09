@@ -120,13 +120,11 @@ const ChatPage = () => {
         tokenSet(tkn);
       }
     });
-		
   }, []);
 
-	useEffect(() => {
-		dispatch({ type: "open", id: Number(id) - 1 });
-	}, [dispatch, id]);
-
+  useEffect(() => {
+    dispatch({ type: "open", id: Number(id) - 1 });
+  }, [dispatch, id]);
 
   const firstUpdate = useRef(true);
 
