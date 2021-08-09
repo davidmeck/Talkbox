@@ -9,7 +9,6 @@ import { getTimeAgo } from "./utils";
 const speechsdk = require("microsoft-cognitiveservices-speech-sdk");
 
 const getToken = async (): Promise<{ tkn: string; location: string }> => {
-  console.log("called");
   const cookie = new Cookie();
 
   let tb_tkn = cookie.get("tb_tkn");
