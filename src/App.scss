@@ -83,6 +83,7 @@ ol {
   }
 
   button {
+
     padding: 0;
     background: none;
     border: none;
@@ -95,9 +96,13 @@ ol {
     display: flex;
     align-items: center;
     justify-content: center;
+		transition: background 0.2s ease-in-out;
+		
+
     &.recording {
 			@include pulsate(pulse_red, $error);
-      animation: pulse_red 1s infinite;
+      animation: pulse_red 1.5s normal infinite ease-in-out;
+			animation-delay: 200ms;
       background: $error;
     }
   }
@@ -155,27 +160,8 @@ ol {
   }
 }
 
-@include pulsate(pulse_primary, $primary);
+@include pulsate(pulse_primary, $primary, 100px);
 
-@keyframes pulse {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
-  }
-
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
-  }
-
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
-  }
-}
-
-div[class*="slide-"] {
-}
 .slide-exit {
   position: absolute;
   top: 0;
@@ -237,9 +223,9 @@ div[class*="slide-"] {
     top: 100vh;
     animation: show 200ms normal forwards ease-in-out;
     animation-delay: 50ms;
-    .mic-btn {
-      animation: pulse_primary 1s 3 forwards ease-in-out;
-      animation-delay: 200ms;
+    .mic-btn:not(.recording) {
+      animation: pulse_primary 1.2s 1 forwards ease-in-out;
+      animation-delay: 600ms;
     }
   }
 }
