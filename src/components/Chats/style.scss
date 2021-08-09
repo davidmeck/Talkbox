@@ -1,0 +1,58 @@
+@import "../../assets/utils.scss";
+ul.chat-list {
+  display: flex;
+  flex-direction: column;
+  li {
+    margin-bottom: 1rem;
+    border-bottom: 1px rgba(black, 0.1) solid;
+    border-radius: $radius;
+    a {
+      display: flex;
+      padding-bottom: 1rem;
+      color: $darkGray;
+    }
+    .content {
+      flex-grow: 1;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      font-size: 0.7rem;
+			line-height: 1.2rem;
+      span.name {
+        font-weight: bold;
+        color: $primary;
+        display: block;
+        margin-bottom: 0.2rem;
+        font-size: 1rem;
+      }
+      span.message {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+
+    span.meta {
+      font-size: 0.7rem;
+      white-space: nowrap;
+      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      span.unread-count {
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        background: $primary;
+        color: white;
+        font-size: 0.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+[
+  {
+    "name": "John Doe",
+    "status": "active",
+    "image_id": 33,
+    "chats": [
+      {
+        "read": false,
+        "content": "I love your display picture",
+        "date": "Mon, 09 Aug 2021 9:43:22 GMT"
+      },
+      {
+        "read": false,
+        "content": "Nostrud consectetur est proident deserunt proident nostrud in mollit. Minim consectetur ad proident fugiat veniam. Deserunt veniam dolor labore est pariatur reprehenderit. Minim officia ullamco non et incididunt tempor ut",
+        "own": true,
+        "date": "Mon, 09 Aug 2021 8:43:22 GMT"
+      }
+    ]
+  },
+
+  {
+    "name": "Jane Doe",
+    "image_id": 38,
+    "status": "busy",
+    "chats": [
+      {
+        "read": true,
+        "content": "This is a test",
+        "date": "Mon, 09 Aug 2021 8:23:22 GMT"
+      }
+    ]
+  }
+]
