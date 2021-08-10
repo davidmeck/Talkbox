@@ -41,6 +41,9 @@ function setData(data: ChatListItem[]): ChatListItem[] {
       chats,
     };
   });
+
+  //sort by
+
   window.localStorage.setItem("tb_chats", JSON.stringify(data));
   return data;
 }

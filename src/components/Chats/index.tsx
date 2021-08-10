@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { Link } from "react-router-dom";
 import ChatContext, { ChatListItem } from "../../store";
 import { getTimeAgo } from "../../utils";
@@ -38,12 +38,25 @@ const Chat = ({ index, chats }: { index: number; chats: ChatListItem }) => {
 const ChatList = () => {
   const { state } = useContext(ChatContext)!;
 
+  const chats = useMemo(
+    () =>
+      state.sort((a, b) =>
+        a.chats.length && b.chats.length
+          ? new Date(b.chats[0].date).getTime() -
+            new Date(a.chats[0].date).getTime()
+          : a.chats.length
+          ? -1
+          : 1
+      ),
+    [state]
+  );
+
   return (
     <div className="main-content">
       <div className="container">
         <ul className="chat-list">
-          {state &&
-            state.map((chat: ChatListItem, index: number) => (
+          {chats &&
+            chats.map((chat: ChatListItem, index: number) => (
               <Chat key={index} index={index} chats={chat} />
             ))}
         </ul>
