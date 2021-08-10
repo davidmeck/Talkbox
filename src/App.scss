@@ -177,6 +177,7 @@ ol {
   transform: translateX(0%);
 }
 .slide-enter-active {
+  transition-delay: 10ms;
   &.right {
     transform: translateX(100%);
   }
