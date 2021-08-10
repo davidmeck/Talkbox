@@ -159,7 +159,7 @@ const ChatPage = () => {
           >
             <Icon>{token ? (recording ? "mic" : "mic_none") : "mic_off"}</Icon>
           </button>
-          <span className="hint">{status}</span>
+          {!recording && <span className="hint">{status}</span>}
         </div>
       </div>
     </div>
