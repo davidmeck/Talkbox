@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Icon from "../Icon";
 import "./style.scss";
 const BottomBar = () => {
@@ -6,19 +7,19 @@ const BottomBar = () => {
       <div className="container">
         <ul>
           <li>
-            <a href="/">
+            <Link to="/">
               <Icon>phone</Icon>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/" className="active">
+            <Link to="/" className="active">
               <Icon>home</Icon>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/">
+            <Link to="/">
               <Icon>notifications</Icon>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
